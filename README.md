@@ -1,2 +1,2 @@
-# ImageFeatures
-implementation of SOTA feature extraction and registration algorithms
+# Amazing AI
+notes on paper and news I have read
