@@ -3,7 +3,14 @@ notes on paper and news I have read
 
 [Distilling the Knowledge in a Neural Network](https://arxiv.org/pdf/1503.02531.pdf)
 
-(Globally and Locally Consistent Image Completion)[http://iizuka.cs.tsukuba.ac.jp/projects/completion/data/completion_sig2017.pdf]
+[PatchMatch](https://gfx.cs.princeton.edu/pubs/Barnes_2009_PAR/)
+目的是使用图片中的冗余信息填充缺失部分。核心思想是通过随机采样与图像的局部相关性提升匹配效率。
+匹配步骤如下：
+a)将初始patch随机匹配待搜索图片；
+b)使用最近领域patch去验证能否继续提升匹配；
+c)在指定范围内迭代匹配，提升匹配效果。
+
+[Globally and Locally Consistent Image Completion](http://iizuka.cs.tsukuba.ac.jp/projects/completion/data/completion_sig2017.pdf)
 解决了传统CV方法无法修补背景中不存在相似像素的情况，同时也可以修补比较大的空缺区域。
 实现方法是：1. 借鉴图像数据库搜索相似patch的做法，同时GAN网络学习图像分布；2.采用空洞卷积扩大CNN的感知范围，从而可以生成更大的语义像素；3.采用局部和全局两个鉴别器，来监督生成器提供语义合理同时过度自然的填充像素。
 
